@@ -1,0 +1,38 @@
+<div>
+  <mat-card>
+    <mat-card-content>
+
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+          <mat-form-field class="full-width-input">
+            <h4>LOGIN</h4>
+
+              <input matInput type="text" name="name" #name="ngModel" [(ngModel)]="model.name" placeholder="User name" required>
+          </mat-form-field>
+
+
+
+
+
+          <mat-form-field class="full-width-input">
+                <input type="password" name="password" #name="ngModel" [(ngModel)]="model.password" placeholder="Password">
+              </mat-form-field>
+              <br>
+              <br>
+
+                <!-- <button mat-raised-button color="primary" type="button" (click)="resetForm(loginForm)">Reset</button> -->
+                <button mat-raised-button class="signin" color="accent" type="submit" [disabled]="!loginForm.valid">Sign in</button>
+                <!-- <p class="tip signup-tip">
+                  <span>Don't have an account?</span>
+                  <a (click)="signUp()">Sign up</a>
+              </p> -->
+          </form>
+        </mat-card-content>
+        </mat-card>
+</div>
+
+
+
+
+
+
+

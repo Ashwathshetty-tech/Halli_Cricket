@@ -1,0 +1,46 @@
+<div class="bg-img">
+  <mat-card>
+    <mat-card-content>
+            <form (submit)="onSubmit(eventForm)">
+              <div [formGroup]="eventForm">
+                <mat-form-field class="full-width-input">
+                  <h4>Registration Form</h4>
+                    <input type="text" formControlName="name" placeholder="Event name" required>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                  <input type="text" formControlName="place"placeholder="place" required>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" formControlName="organizer" placeholder="Organizer">
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                  <input type="text" formControlName="contact" placeholder="Contact number" required>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                  <label for="file">Choose File</label>
+                  <input type="file"
+                         id="file"
+                         (change)="handleFileInput($event)" formControlName="poster" >
+               </mat-form-field>
+               <!-- <mat-form-field appearance="fill" class="full-width-input">
+                <label for="date">Choose a date</label>
+                <input type="date" formControlName="picker">
+              </mat-form-field> -->
+              <!-- <mat-form-field>
+                <mat-label>Custom calendar color</mat-label>
+                <input matInput [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                </mat-form-field> -->
+                    <br><br>
+                    <button mat-raised-button class="signup" type="submit" [disabled]="!eventForm.valid" style="color: blue;">Register Event</button>
+                    <p class="tip signup-tip">
+                      <a (click)="Back()">Back</a>
+                  </p>
+              </div>
+
+            </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
